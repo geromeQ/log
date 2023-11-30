@@ -7,10 +7,8 @@ const LoginScreen = ({ navigation }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = () => {
-    // Simulate login logic (replace this with your actual login code)
-    // For demonstration purposes, log the entered credentials
     console.log('Logged in with:', { username, password });
-    // After successful login, set isAuthenticated to true
+
     setIsAuthenticated(true);
   };
 
@@ -20,35 +18,49 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
-      {!isAuthenticated ? (
-        <View>
-          <TextInput
-            style={styles.input}
-            placeholder="Username"
-            value={username}
-            onChangeText={(text) => setUsername(text)}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            secureTextEntry
-            value={password}
-            onChangeText={(text) => setPassword(text)}
-          />
-          <Button title="Login" onPress={handleLogin} />
-          <Button
-            title="Register"
-            onPress={() => navigation.navigate('Register')}
-          />
-          <View style={styles.space} />
-        </View>
-      ) : (
-        <View>
-          <Text>User is logged in!</Text>
-          <Button title="Logout" onPress={handleLogout} />
-        </View>
-      )}
+      <View style={styles.content}>
+        <Text style={styles.title}>Login</Text>
+        {!isAuthenticated ? (
+          <View>
+            <TextInput
+              style={styles.input}
+              placeholder="Username"
+              value={username}
+              onChangeText={(text) => setUsername(text)}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Password"
+              secureTextEntry
+              value={password}
+              onChangeText={(text) => setPassword(text)}
+            />
+            <Button
+              title="Login"
+              onPress={handleLogin}
+              style={styles.button}
+              color="#5cb85c" // Light green color
+            />
+            <Button
+              title="Register"
+              onPress={() => navigation.navigate('Register')}
+              style={styles.button}
+              color="#5cb85c" // Light green color
+            />
+            <View style={styles.space} />
+          </View>
+        ) : (
+          <View>
+            <Text>User is logged in!</Text>
+            <Button
+              title="Logout"
+              onPress={handleLogout}
+              style={styles.button}
+              color="#5cb85c" // Light green color
+            />
+          </View>
+        )}
+      </View>
     </View>
   );
 };
@@ -60,6 +72,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 30,
     backgroundColor: '#fff',
+  },
+  content: {
+    width: '80%',
+    alignItems: 'center',
   },
   title: {
     fontSize: 24,
@@ -73,6 +89,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginBottom: 20,
     paddingHorizontal: 15,
+  },
+  button: {
+    marginTop: 15,
+    width: '100%',
+    borderRadius: 8,
   },
   space: {
     height: 20,
