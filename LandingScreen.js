@@ -29,11 +29,30 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
+    backgroundColor: '#f0f0f0',
+  },
+  content: {
+    width: '80%',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 24,
+    marginBottom: 20,
+    textAlign: 'center',
   },
   button: {
     marginTop: 15,
     width: '100%',
+    borderRadius: 8,
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  outlinedButton: {
+    backgroundColor: 'transparent',
+    borderWidth: 2,
+    borderColor: '#007bff',
   },
 });
 
