@@ -7,10 +7,7 @@ const LoginScreen = ({ navigation }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = () => {
-    // Simulate login logic (replace this with your actual login code)
-    // For demonstration purposes, log the entered credentials
     console.log('Logged in with:', { username, password });
-    // After successful login, set isAuthenticated to true
     setIsAuthenticated(true);
   };
 
@@ -45,7 +42,7 @@ const LoginScreen = ({ navigation }) => {
         </View>
       ) : (
         <View>
-          <Text>User is logged in!</Text>
+          <Text>"You're finally log-in."</Text>
           <Button title="Logout" onPress={handleLogout} />
         </View>
       )}
