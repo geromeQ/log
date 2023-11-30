@@ -50,12 +50,67 @@ const RegisterScreen = () => {
   );
 };
 
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { TextInput, Button, Title } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
+
+const RegisterScreen = () => {
+  const navigation = useNavigation();
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleRegistration = () => {
+ 
+    if (username !== '' && email !== '' && password !== '') {
+    
+      navigation.navigate('Login'); // Navigating back to the Login screen
+    } else {
+      // Handle invalid registration data
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <Title style={styles.title}>Register</Title>
+      <TextInput
+        label="Username"
+        value={username}
+        onChangeText={(text) => setUsername(text)}
+        style={styles.input}
+      />
+      <TextInput
+        label="Email"
+        keyboardType="email-address"
+        value={email}
+        onChangeText={(text) => setEmail(text)}
+        style={styles.input}
+      />
+      <TextInput
+        label="Password"
+        secureTextEntry
+        value={password}
+        onChangeText={(text) => setPassword(text)}
+        style={styles.input}
+      />
+      <Button mode="contained" onPress={handleRegistration} style={styles.button}>
+        Register
+      </Button>
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
+    backgroundColor: '#f0f0f0', 
+  },
+  content: {
+    width: '80%',
+    alignItems: 'center',
   },
   title: {
     fontSize: 28,
@@ -70,6 +125,8 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 15,
     width: '100%',
+    borderRadius: 8,
+    backgroundColor: '#007bff', 
   },
 });
 
