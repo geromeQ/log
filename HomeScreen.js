@@ -6,14 +6,12 @@ const HomeScreen = ({ navigation, route }) => {
   const { username } = route.params || {};
 
   const handleLogout = () => {
-    // Implement logout logic here
-    // For example, clear user session/token and navigate back to Login screen
     navigation.navigate('Login');
   };
 
   return (
     <View style={styles.container}>
-      <Title>Welcome {username ? `, ${username}!` : 'to MyApp!'}</Title>
+      <Title>Welcome {username ? `, ${username}!` : 'User'}</Title>
       <Button mode="contained" onPress={handleLogout} style={styles.button}>
         Logout
       </Button>
