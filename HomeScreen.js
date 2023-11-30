@@ -24,12 +24,22 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
+    backgroundColor: '#f0f0f0', 
+  },
+  content: {
+    width: '80%',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 24,
+    marginBottom: 20,
+    textAlign: 'center',
   },
   button: {
     marginTop: 20,
     width: '100%',
+    borderRadius: 8,
+    backgroundColor: '#007bff', 
   },
 });
-
 export default HomeScreen;
