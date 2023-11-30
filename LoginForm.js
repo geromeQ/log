@@ -7,10 +7,7 @@ const LoginScreen = ({ navigation }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = () => {
-    // Simulate login logic (replace this with your actual login code)
-    // For demonstration purposes, log the entered credentials
     console.log('Logged in with:', { username, password });
-    // After successful login, set isAuthenticated to true
     setIsAuthenticated(true);
   };
 
@@ -58,8 +55,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 30,
-    backgroundColor: '#fff',
+    backgroundColor: '#f0f0f0',
+  },
+  content: {
+    width: '80%',
+    alignItems: 'center',
   },
   title: {
     fontSize: 24,
@@ -73,6 +73,12 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginBottom: 20,
     paddingHorizontal: 15,
+  },
+  button: {
+    marginTop: 15,
+    width: '100%',
+    borderRadius: 8,
+    backgroundColor: '#007bff',
   },
   space: {
     height: 20,
